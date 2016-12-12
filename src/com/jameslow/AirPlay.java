@@ -58,7 +58,7 @@ public class AirPlay {
 		try {
 			AirPlay.rect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
 			AirPlay.robot = new Robot();
-		} catch (AWTException ae) {
+		} catch (Exception e) {
 			System.out.println("Running in headless mode");
 		}
 
