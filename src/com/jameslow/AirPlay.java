@@ -577,7 +577,11 @@ public class AirPlay {
 				} else {
 					airplay = new AirPlay(hostport[0]);
 				}
-				airplay.setAuth(new AuthConsole());
+				try {
+					airplay.setAuth(new AuthConsole());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				System.out.println("Authorized");
 				String password = (String) cmd.getOptionValue(passopt);
 				airplay.setPassword(password);
