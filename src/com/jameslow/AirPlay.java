@@ -55,8 +55,12 @@ public class AirPlay {
 	}
 	public AirPlay(String hostname, int port, String name) throws AWTException {
 		// we init these once so that it doesn't construct on every frame
-		AirPlay.rect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-		AirPlay.robot = new Robot();
+		try {
+			AirPlay.rect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+			AirPlay.robot = new Robot();
+		} catch (AWTException ae) {
+			System.out.println("Running in headless mode");
+		}
 
 		this.hostname = hostname;
 		this.port = port;
