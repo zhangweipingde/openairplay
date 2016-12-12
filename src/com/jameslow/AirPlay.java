@@ -578,10 +578,12 @@ public class AirPlay {
 					airplay = new AirPlay(hostport[0]);
 				}
 				airplay.setAuth(new AuthConsole());
+				System.out.println("Authorized");
 				String password = (String) cmd.getOptionValue(passopt);
 				airplay.setPassword(password);
 				String photo;
 				if (cmd.getOptionValue(stopopt) != null) {
+					System.out.println("Stopping airplay");
 					airplay.stop();
 				} else if ((photo = (String) cmd.getOptionValue(photoopt)) != null) {
 					System.out.println("Airplaying photo");
