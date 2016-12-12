@@ -584,9 +584,11 @@ public class AirPlay {
 				if (cmd.getOptionValue(stopopt) != null) {
 					airplay.stop();
 				} else if ((photo = (String) cmd.getOptionValue(photoopt)) != null) {
+					System.out.println("Airplaying photo");
 					System.out.println("Press ctrl-c to quit");
 					airplay.photo(photo);
 				} else if (cmd.getOptionValue(desktopopt) != null) {
+					System.out.println("Airplaying desktop");
 					System.out.println("Press ctrl-c to quit");
 					airplay.desktop();
 				} else {
