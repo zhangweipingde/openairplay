@@ -560,7 +560,7 @@ public class AirPlay {
 			
 			Boolean showHelp = (Boolean) cmd.getOptionValue(helpopt);
 			
-			if (null != showHelp && showHelp ){
+			if (null != showHelp && showHelp){
 				usage();
 			}else if (hostname == null) { //show select dialog if no host address is given
 				AirPlay airplay = searchDialog(null);
@@ -569,6 +569,7 @@ public class AirPlay {
 					airplay.desktop();
 				}
 			} else {
+				System.out.println("Airplaying with valid hostname");
 				AirPlay airplay;
 				String[] hostport = hostname.split(":",2);
 				if (hostport.length > 1) {
